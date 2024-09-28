@@ -17,3 +17,4 @@ customcommand.handle_commands()
 ```
 
 Types will be automatically converted. Supported types are: `str`, `int` and `float`.
+The help command is automatically generated using the function's docstring.
