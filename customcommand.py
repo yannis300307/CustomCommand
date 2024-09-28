@@ -87,7 +87,10 @@ def handle_commands():
                         else:
                             converted.append(sys.argv[2 + arg])
                     except ValueError:
-                        print_error(f"Invalid type for `{i['parameters'][arg].name}` argument")
+                        print_error(f"Invalid type for `{i['parameters'][arg].name}` argument! "
+                                    f"`{i['parameters'][arg].name}` argument must be type "
+                                    f"`{i['parameters'][arg].annotation.__name__}`.")
+                        return
                 i["function"](*converted)
             return
     print_error(f"Unknown argument `{sys.argv[1]}`! See `python {filename} help` for help.")
