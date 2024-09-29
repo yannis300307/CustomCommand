@@ -14,8 +14,11 @@ def command(func: types.FunctionType):
     signature = inspect.signature(func)
 
     parameters = list(signature.parameters.values())
-    doc = re.sub("\n *", " ", func.__doc__)
-    doc = "\n        ".join(textwrap.wrap(doc))  # Reformat the docstring
+    if doc is not None:
+        doc = re.sub("\n *", " ", func.__doc__)
+        doc = "\n        ".join(textwrap.wrap(doc))  # Reformat the docstring
+    else:
+        doc = ""
 
     required_arg_count = 0
     for arg in parameters:
