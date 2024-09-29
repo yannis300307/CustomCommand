@@ -14,7 +14,7 @@ def command(func: types.FunctionType):
     signature = inspect.signature(func)
 
     parameters = list(signature.parameters.values())
-    if doc is not None:
+    if func.__doc__ is not None:
         doc = re.sub("\n *", " ", func.__doc__)
         doc = "\n        ".join(textwrap.wrap(doc))  # Reformat the docstring
     else:
@@ -73,6 +73,9 @@ def print_error(text):
 
 
 def handle_commands():
+    if len(sys.argv) < 2:
+        print_error("Missing argument! See `python {filename} help` for help.")
+        return
     for i in registered:
         if i["name"] == sys.argv[1]:
             if len(sys.argv)-2 > len(i["parameters"]):
