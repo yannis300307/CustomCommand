@@ -59,9 +59,9 @@ def help_():
             else:
                 t = arg.annotation.__name__
             if arg.default is arg.empty:
-                print(f"        Optional - {arg.name}: {t}")
-            else:
                 print(f"        Required - {arg.name}: {t}")
+            else:
+                print(f"        Optional - {arg.name}: {t}")
         print("    Syntax: ", end="")
         for arg in i["parameters"]:
             print(f"<{arg.name}>" if arg.default is arg.empty else f"[{arg.name}]", end=" ")
