@@ -74,7 +74,7 @@ def print_error(text):
 
 def handle_commands():
     if len(sys.argv) < 2:
-        print_error("Missing argument! See `python {filename} help` for help.")
+        print_error(f"Missing argument! See `python {filename} help` for help.")
         return
     for i in registered:
         if i["name"] == sys.argv[1]:
