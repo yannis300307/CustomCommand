@@ -1,9 +1,9 @@
-# One of the easyest way to make shell commands
+# One of the easiest way to make shell commands
 
 ## How to use?
 
 Create a Python file named with the name of your command.
-Here is a minimal exemple:
+Here is a minimal example:
 
 ```python
 import customcommand
