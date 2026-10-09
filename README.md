@@ -9,11 +9,9 @@ Here is a minimal example:
 import customcommand
 
 @customcommand.command
-def add_numbers(a:int, b:int):
-    """Add the two numbers and print the result."""
+def add_numbers(a: int, b: int):
+    """Add two numbers and prints the result."""
     print(a + b)
-
-customcommand.handle_commands()
 ```
 
 Types will be automatically converted. Supported types are: `str`, `int` and `float`.

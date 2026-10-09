@@ -1,12 +1,8 @@
 import customcommand
 
-
 @customcommand.command
 def test(a:float, b: int = 5, c: str = "hello"):
     """A test function.
-    That make things. But that things are very important in my program. Why?
-    I don't know... If I remove it, it's not working the yeah, I will keep it."""
-    print("salut")
-
-
-customcommand.handle_commands()
+    This function ca do something. But that thing is very important in my program. Why?
+    In case this function would not exist, this file would be empty. So it's worth having it"""
+    print(f"Hello, world! a: {a}, b: {b}, c: {c}")

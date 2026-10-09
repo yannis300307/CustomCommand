@@ -5,6 +5,7 @@ import sys
 import textwrap
 import types
 import warnings
+import atexit
 
 registered = []
 filename = os.path.basename(inspect.getfile(sys.modules["__main__"]))
@@ -100,3 +101,5 @@ def handle_commands():
                 i["function"](*converted)
             return
     print_error(f"Unknown argument `{sys.argv[1]}`! See `python {filename} help` for help.")
+
+atexit.register(handle_commands)
